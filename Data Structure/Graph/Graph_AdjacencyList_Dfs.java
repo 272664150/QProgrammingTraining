@@ -39,7 +39,7 @@ public class Graph_AdjacencyList_Dfs {
      * @param t
      */
     public void dfs(int s, int t) {
-        if (s >= mVertexNum || t >= mVertexNum || s == t) {
+        if (s >= mVertexNum || t >= mVertexNum || s >= t) {
             return;
         }
 

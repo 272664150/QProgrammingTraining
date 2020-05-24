@@ -38,7 +38,7 @@ public class Graph_AdjacencyMatrix_Dfs {
      * @param t
      */
     public void dfs(int s, int t) {
-        if (s >= mVertexNum || t >= mVertexNum || s == t) {
+        if (s >= mVertexNum || t >= mVertexNum || s >= t) {
             return;
         }
 
@@ -75,8 +75,7 @@ public class Graph_AdjacencyMatrix_Dfs {
         }
 
         for (int i = 0; i < mVertexNum; ++i) {
-            int v = mAdjacencyMatrix[w][i];
-            if (v == 1 && !visited[i]) {
+            if (mAdjacencyMatrix[w][i] == 1 && !visited[i]) {
                 prev[i] = w;
                 recurDfs(i, t, visited, prev);
             }

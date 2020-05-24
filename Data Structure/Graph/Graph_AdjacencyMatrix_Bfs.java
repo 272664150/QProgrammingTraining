@@ -39,7 +39,7 @@ public class Graph_AdjacencyMatrix_Bfs {
      * @param t
      */
     public void bfs(int s, int t) {
-        if (s >= mVertexNum || t >= mVertexNum || s == t) {
+        if (s >= mVertexNum || t >= mVertexNum || s >= t) {
             return;
         }
 
@@ -60,8 +60,7 @@ public class Graph_AdjacencyMatrix_Bfs {
         while (queue.size() != 0) {
             int w = queue.poll();
             for (int i = 0; i < mVertexNum; ++i) {
-                int v = mAdjacencyMatrix[w][i];
-                if (v == 1 && !visited[i]) {
+                if (mAdjacencyMatrix[w][i] == 1 && !visited[i]) {
                     prev[i] = w;
                     if (i == t) {
                         print(prev, s, t);

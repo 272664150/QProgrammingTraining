@@ -38,7 +38,7 @@ public class Graph_AdjacencyList_Bfs {
      * @param t
      */
     public void bfs(int s, int t) {
-        if (s >= mVertexNum || t >= mVertexNum || s == t) {
+        if (s >= mVertexNum || t >= mVertexNum || s >= t) {
             return;
         }
 
