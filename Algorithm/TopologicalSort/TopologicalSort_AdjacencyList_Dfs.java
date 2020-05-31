@@ -45,11 +45,10 @@ public class TopologicalSort_AdjacencyList_Dfs {
         for (int i = 0; i < mVertexNum; i++) {
             if (mInDegree[i] == 0) {
                 recurDfs(i);
-                break;
             }
         }
 
-        System.out.print(mReversePost);
+        System.out.println(mReversePost);
     }
 
     /**
@@ -58,7 +57,7 @@ public class TopologicalSort_AdjacencyList_Dfs {
      * @param s
      */
     private void recurDfs(int s) {
-        if (mReversePost.size() == mVertexNum) {
+        if (isVisited[s] || mReversePost.size() == mVertexNum) {
             return;
         }
 
@@ -82,7 +81,7 @@ public class TopologicalSort_AdjacencyList_Dfs {
         TopologicalSort_AdjacencyList_Dfs graph = new TopologicalSort_AdjacencyList_Dfs(8);
         graph.addEdge(0, 1);
         graph.addEdge(0, 3);
-        graph.addEdge(1, 2);
+        // graph.addEdge(1, 2);
         graph.addEdge(1, 4);
         graph.addEdge(2, 5);
         graph.addEdge(4, 5);
